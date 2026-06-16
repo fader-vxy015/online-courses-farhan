@@ -1,0 +1,10 @@
+/vendor/
+.env
+.DS_Store
+node_modules/
+uploads/
+*.log
+*.sqlite
+.idea/
+.vscode/
+/public/admin/analytics/*
