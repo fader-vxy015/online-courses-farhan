@@ -149,13 +149,44 @@ $course_values = array_column($course_counts, 'value');
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
-    const monthlyLabels = <?= json_encode($chart_labels) ?>;
-    const monthlyData = <?= json_encode($chart_values) ?>;
-    const courseLabels = <?= json_encode($course_labels) ?>;
-    const courseData = <?= json_encode($course_values) ?>;
-    const courseColors = courseLabels.map((_, index) => `hsl(${index * 40 % 360}, 75%, 55%)`);
+    var monthlyLabels = <?= json_encode($chart_labels) ?>;
+    var monthlyData = <?= json_encode($chart_values) ?>;
+    var courseLabels = <?= json_encode($course_labels) ?>;
+    var courseData = <?= json_encode($course_values) ?>;
+    var courseColors = courseLabels.map(function(_, index) {
+      return 'hsl(' + ((index * 40) % 360) + ', 75%, 55%)';
+    });
 
-    new Chart(document.getElementById('monthlyChart'), {
+    function formatTooltip(context) {
+      var label = '';
+      if (context.label !== undefined && context.label !== null) {
+        label = context.label;
+      } else if (context.chart && context.chart.data && context.chart.data.labels) {
+        label = context.chart.data.labels[context.dataIndex] || '';
+      }
+
+      var value = context.raw;
+      if (value === undefined || value === null) {
+        if (context.parsed !== undefined && context.parsed !== null) {
+          if (typeof context.parsed === 'object') {
+            value = context.parsed.y !== undefined ? context.parsed.y : context.parsed;
+          } else {
+            value = context.parsed;
+          }
+        } else {
+          value = 0;
+        }
+      }
+      if (typeof value === 'object') {
+        value = value.y !== undefined ? value.y : value.r !== undefined ? value.r : 0;
+      }
+      return (label ? label + ': ' : '') + value + ' pendaftar';
+    }
+
+    var monthlyCtx = document.getElementById('monthlyChart').getContext('2d');
+    var courseCtx = document.getElementById('courseChart').getContext('2d');
+
+    new Chart(monthlyCtx, {
       type: 'bar',
       data: {
         labels: monthlyLabels,
@@ -178,12 +209,12 @@ $course_values = array_column($course_counts, 'value');
         },
         plugins: {
           legend: { display: false },
-          tooltip: { callbacks: { label: ctx => `${ctx.parsed.y} pendaftar` } }
+          tooltip: { callbacks: { label: formatTooltip } }
         }
       }
     });
 
-    new Chart(document.getElementById('courseChart'), {
+    new Chart(courseCtx, {
       type: 'pie',
       data: {
         labels: courseLabels,
@@ -199,7 +230,7 @@ $course_values = array_column($course_counts, 'value');
         maintainAspectRatio: false,
         plugins: {
           legend: { position: 'bottom', labels: { boxWidth: 12, padding: 16 } },
-          tooltip: { callbacks: { label: ctx => `${ctx.label}: ${ctx.parsed} pendaftar` } }
+          tooltip: { callbacks: { label: formatTooltip } }
         }
       }
     });
