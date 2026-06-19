@@ -1,4 +1,4 @@
-<?php require_once '../src/config/koneksi.php'; ?>
+<?php require_once 'src/config/koneksi.php'; ?>
 <!DOCTYPE html>
 <html lang="id">
 <head>

@@ -5,8 +5,8 @@ if (!isset($_SESSION["admin"])) {
   exit;
 }
 
-require_once '../../src/config/koneksi.php';
-require_once '../../src/includes/functions.php';
+require_once '../config/koneksi.php';
+require_once '../includes/functions.php';
 
 // Total pendaftar
 $total_pendaftar_query = mysqli_query($conn, "SELECT COUNT(*) as total FROM pendaftar");

@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once '../src/config/koneksi.php';
-require_once '../src/includes/functions.php';
+require_once 'src/config/koneksi.php';
+require_once 'src/includes/functions.php';
 
 if (empty($_SESSION['user_id'])) {
     redirect('auth/login.php');

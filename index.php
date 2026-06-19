@@ -1,5 +1,5 @@
-<?php require_once '../src/config/koneksi.php';
-require_once '../src/includes/functions.php'; ?>
+<?php require_once 'src/config/koneksi.php';
+require_once 'src/includes/functions.php'; ?>
 <!DOCTYPE html>
 <html lang="id">
 <head>

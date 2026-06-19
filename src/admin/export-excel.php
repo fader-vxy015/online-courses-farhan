@@ -2,8 +2,8 @@
 header("Content-Type: application/vnd.ms-excel");
 header("Content-Disposition: attachment; filename=pendaftarkursus.xls");
 
-require_once '../../src/config/koneksi.php';
-require_once '../../src/includes/functions.php';
+require_once '../config/koneksi.php';
+require_once '../includes/functions.php';
 
 echo "<table border='1'>";
 echo "<tr>
