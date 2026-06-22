@@ -14,7 +14,7 @@
       <p style="max-width: 720px; margin: 24px auto; color: #475569; line-height:1.8;">
         Kami menawarkan kursus dalam desain grafis, data analyst, digital marketing, machine learning, Microsoft Office, dan banyak lagi. Silakan daftar sekarang untuk mendapatkan materi terbaru.
       </p>
-      <a href="auth/register.php" class="button button-primary">Daftar Sekarang</a>
+      <a href="src/auth/register.php" class="button button-primary">Daftar Sekarang</a>
     </section>
   </main>
 </body>

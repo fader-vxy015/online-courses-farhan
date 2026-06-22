@@ -1,10 +1,10 @@
 <?php
 session_start();
-require_once 'src/config/koneksi.php';
-require_once 'src/includes/functions.php';
+require_once '../config/koneksi.php';
+require_once '../includes/functions.php';
 
 if (empty($_SESSION['user_id'])) {
-    redirect('auth/login.php');
+    redirect('login.php');
 }
 
 $user_id = currentUserId();
@@ -23,7 +23,7 @@ if ($user_id) {
 }
 
 if (!$nama || !$email) {
-    redirect('auth/login.php');
+    redirect('login.php');
 }
 
 $errors = [];
@@ -167,7 +167,7 @@ if (empty($errors)) {
         <div class="checkmark">✔️</div>
         <h2>Pendaftaran Berhasil!</h2>
         <p>Terima kasih sudah mendaftar kursus kami.<br>Kami akan segera menghubungi Anda melalui email atau WhatsApp.</p>
-        <a href="index.php" class="btn-kembali">Kembali ke Halaman Utama</a>
+        <a href="../../index.php" class="btn-kembali">Kembali ke Halaman Utama</a>
     <?php else: ?>
         <div class="checkmark" style="color: #b91c1c;">⚠️</div>
         <h2>Pendaftaran Gagal</h2>

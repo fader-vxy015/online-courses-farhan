@@ -8,12 +8,13 @@ $admin_user = "farhan";
 $admin_pass = "farhan";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $user = $_POST["username"];
-  $pass = $_POST["password"];
+  $user = isset($_POST["username"]) ? trim($_POST["username"]) : '';
+  $pass = isset($_POST["password"]) ? $_POST["password"] : '';
 
   if ($user === $admin_user && $pass === $admin_pass) {
     $_SESSION["admin"] = true;
-    header("Location: dashboard.php");
+    $_SESSION["login_time"] = time();
+    header("Location: dashboard.php", true, 302);
     exit;
   } else {
     $error = "Username atau password salah!";
@@ -171,7 +172,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <h2>Login Admin</h2>
 
-    <?php if (!empty($error)) echo "<div class='error-msg'>$error</div>"; ?>
+    <?php if (!empty($error)) echo "<div class='error-msg'>" . htmlspecialchars($error, ENT_QUOTES, 'UTF-8') . "</div>"; ?>
 
     <form method="POST">
       <label for="username">Username</label>

@@ -829,7 +829,7 @@ require_once 'src/includes/functions.php'; ?>
         <a href="index.php" class="logo">Si<span>Pintar</span></a>
         <ul class="nav-links">
           <li><a href="index.php" class="active">Beranda</a></li>
-          <li><a href="auth/register.php" class="btn-daftar">Daftar Sekarang</a></li>
+          <li><a href="src/auth/register.php" class="btn-daftar">Daftar Sekarang</a></li>
         </ul>
         <button class="mobile-menu" onclick="toggleMenu()">
           <i class="fas fa-bars"></i>
@@ -845,7 +845,7 @@ require_once 'src/includes/functions.php'; ?>
         <h1>Belajar Kapan Saja, Di Mana Saja</h1>
         <p>Tingkatkan skillmu dengan kursus online dari instruktur berpengalaman dengan materi terupdate dan metode pembelajaran interaktif.</p>
         <div class="hero-buttons">
-          <a href="auth/register.php" class="btn-primary">Daftar Sekarang</a>
+          <a href="src/auth/register.php" class="btn-primary">Daftar Sekarang</a>
           <a href="#courses" class="btn-secondary">Lihat Kursus</a>
         </div>
       </div>
@@ -906,7 +906,7 @@ require_once 'src/includes/functions.php'; ?>
                 (4.8)
               </div>
             </div>
-            <a href="auth/register.php" class="btn-enroll">Ambil Kursus</a>
+            <a href="src/auth/register.php" class="btn-enroll">Ambil Kursus</a>
           </div>
         </div>
         <div class="course-card">
@@ -931,7 +931,7 @@ require_once 'src/includes/functions.php'; ?>
                 (5.0)
               </div>
             </div>
-            <a href="auth/register.php" class="btn-enroll">Ambil Kursus</a>
+            <a href="src/auth/register.php" class="btn-enroll">Ambil Kursus</a>
           </div>
         </div>
         <div class="course-card">
@@ -956,7 +956,7 @@ require_once 'src/includes/functions.php'; ?>
                 (4.9)
               </div>
             </div>
-            <a href="auth/register.php" class="btn-enroll">Ambil Kursus</a>
+            <a href="src/auth/register.php" class="btn-enroll">Ambil Kursus</a>
           </div>
         </div>
         <div class="course-card">
@@ -981,7 +981,7 @@ require_once 'src/includes/functions.php'; ?>
                 (4.7)
               </div>
             </div>
-            <a href="auth/register.php" class="btn-enroll">Ambil Kursus</a>
+            <a href="src/auth/register.php" class="btn-enroll">Ambil Kursus</a>
           </div>
         </div>
         <div class="course-card">
@@ -1006,7 +1006,7 @@ require_once 'src/includes/functions.php'; ?>
                 (4.9)
               </div>
             </div>
-            <a href="auth/register.php" class="btn-enroll">Ambil Kursus</a>
+            <a href="src/auth/register.php" class="btn-enroll">Ambil Kursus</a>
           </div>
         </div>
         <div class="course-card">
@@ -1031,7 +1031,7 @@ require_once 'src/includes/functions.php'; ?>
                 (4.9)
               </div>
             </div>
-            <a href="auth/register.php" class="btn-enroll">Ambil Kursus</a>
+            <a href="src/auth/register.php" class="btn-enroll">Ambil Kursus</a>
           </div>
         </div>
       </div>
@@ -1121,7 +1121,7 @@ require_once 'src/includes/functions.php'; ?>
     <div class="container">
       <h2>Siap Memulai Perjalanan Belajarmu?</h2>
       <p>Bergabunglah dengan ribuan pelajar lainnya yang telah meningkatkan skill mereka dengan kursus kami. Daftar sekarang dan dapatkan diskon spesial untuk pendaftaran pertama.</p>
-      <a href="auth/register.php" class="btn-primary">Daftar Sekarang</a>
+      <a href="src/auth/register.php" class="btn-primary">Daftar Sekarang</a>
     </div>
   </section>
 

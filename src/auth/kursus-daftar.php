@@ -1,9 +1,9 @@
 <?php
-require_once 'src/config/koneksi.php';
-require_once 'src/includes/functions.php';
+require_once '../config/koneksi.php';
+require_once '../includes/functions.php';
 
 if (empty($_SESSION['user_id'])) {
-    header('Location: auth/login.php');
+    header('Location: login.php');
     exit;
 }
 
@@ -31,7 +31,7 @@ if ($user_id) {
   <title>Form Pendaftaran Kursus Online</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
   <style>
     :root {
       --primary: #2563eb;
